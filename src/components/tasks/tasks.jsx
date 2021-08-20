@@ -51,7 +51,7 @@ const Tasks = (props) => {
   
 useEffect( () => {
 
-  async function fetchData(){
+  async function fetchAllTasks(){
     if(window.localStorage.getItem('token')){
       const getTasksByToken = async () => {
           props.setBackdrop(true)  

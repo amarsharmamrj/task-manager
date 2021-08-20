@@ -78,24 +78,30 @@ export default function Task(props) {
   
     console.log("dialog", dialog)
     console.log("delete",confirmDelete)
-       if(confirmDelete == true){
-      props.setBackdrop(true)
-      await axios.delete(`https://task-manger-api-new.herokuapp.com/tasks/${props.id}`,
-        {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${window.localStorage.getItem('token')}`
-         }
-        })
-        .then(function (response) {
-          console.log(response);
-          props.setBackdrop(false)
-          window.location.reload(true)
-        })
-        .catch(function (error) {
-          props.setBackdrop(false)
-          console.log(error);
-        }); 
+
+    const fetchData = async () => {
+      
+      if(confirmDelete == true){
+        props.setBackdrop(true)
+        await axios.delete(`https://task-manger-api-new.herokuapp.com/tasks/${props.id}`,
+          {
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${window.localStorage.getItem('token')}`
+           }
+          })
+          .then(function (response) {
+            console.log(response);
+            props.setBackdrop(false)
+            window.location.reload(true)
+          })
+          .catch(function (error) {
+            props.setBackdrop(false)
+            console.log(error);
+          }); 
+    }
+    fetchData();
+
     }
   }, [dialog])
   

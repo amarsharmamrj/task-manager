@@ -46,26 +46,6 @@ const EditTask = (props) => {
 
     let editId = window.localStorage.getItem('editId')
     console.log("final editId", editId)
-
-  const loadTask = async () => {
-    props.setBackdrop(true)
-    await axios.get(`https://task-manger-api-new.herokuapp.com/tasks/${editId}`,
-         {
-         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${window.localStorage.getItem('token')}`
-         }
-        })
-          .then(function (response) {
-            console.log(response);
-            props.setBackdrop(false)
-            document.getElementById('task').value = response.data.description
-          })
-          .catch(function (error) {
-            props.setBackdrop(false)
-            console.log(error);
-          }); 
-  }
   
 
   const validateTask = () => {
@@ -128,7 +108,27 @@ const EditTask = (props) => {
   }
   
   useEffect(() => {
-   loadTask();
+    async function loadTask(){
+      props.setBackdrop(true)
+      await axios.get(`https://task-manger-api-new.herokuapp.com/tasks/${editId}`,
+           {
+           headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${window.localStorage.getItem('token')}`
+           }
+          })
+            .then(function (response) {
+              console.log(response);
+              props.setBackdrop(false)
+              document.getElementById('task').value = response.data.description
+            })
+            .catch(function (error) {
+              props.setBackdrop(false)
+              console.log(error);
+            }); 
+    }
+
+  loadTask();
   setDemo(false)
   }, [demo])
 

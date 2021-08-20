@@ -99,9 +99,8 @@ export default function Task(props) {
             console.log(error);
           }); 
     }
-    fetchData();
-
     }
+    fetchData();
   }, [dialog])
   
 

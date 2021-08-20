@@ -129,7 +129,7 @@ const EditTask = (props) => {
   
   useEffect(() => {
    loadTask();
-
+  setDemo(false)
   }, [demo])
 
 

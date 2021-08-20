@@ -5,7 +5,7 @@ import PageNotFound from './components/pageNotFound/pageNotFound'
 import Login from './components/login/login'
 import SignUp from './components/signUp/signUp'
 import Tasks from './components/tasks/tasks'
-import UploadAvatar from './components/upload-avatar/UploadAvatar'
+// import UploadAvatar from './components/upload-avatar/UploadAvatar'
 import CustomizedSnackbars from './components/helper/CustomizedSnackbars/CustomizedSnackbars'
 import SimpleBackdrop from './components/helper/SimpleBackdrop/SimpleBackdrop'
 import SpeedDial from './components/helper/SpeedDial'
@@ -14,14 +14,12 @@ import CreateTask from './components/createTask/CreateTask'
 import EditTask from './components/tasks/editTask'                                                                                                                                 
 import { ThemeProvider, createTheme  } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';    
-import Switch from '@material-ui/core/Switch';
-
 
 const BaseRoutes = () => {
     const [login, setLogin] = useState(true); 
     const [signUp, setSignUp] = useState(true); 
-    const [formError, setFormError] = useState(false);
-    const [formSuccess, setFormSuccess] = useState(false);
+    // const [formError, setFormError] = useState(false);
+    // const [formSuccess, setFormSuccess] = useState(false);
     const [backdrop, setBackdrop] = useState(false);
     const [snackbarStatus, setSnackbarStatus] = useState(false)
     const [snackbar, setSnackbar] = useState({});
@@ -50,6 +48,8 @@ const BaseRoutes = () => {
         }
       }
 
+      console.log(login, signUp, state)
+
     useEffect(() => {
         const theme = localStorage.getItem("preferred-theme")
         if (theme) {
@@ -71,13 +71,7 @@ const BaseRoutes = () => {
             <CssBaseline />
             <BrowserRouter  forceRefresh={false}>
                 <SwipeableTemporaryDrawer darkMode={darkMode} setDarkMode={setDarkMode} handleThemeChange={handleThemeChange} />
-                
-        {/* <Switch
-        checked={state.checkedA}
-        onChange={handleThemeChange}
-        name="checkedA"
-        inputProps={{ 'aria-label': 'secondary checkbox' }}
-      /> */}
+       
                 <SpeedDial />
                 <SimpleBackdrop backdrop={backdrop} setBackdrop={setBackdrop} />
 
@@ -131,12 +125,12 @@ const BaseRoutes = () => {
                         />
                     </Route>
                     
-                    <Route path="/upload-avatar" exact>
+                    {/* <Route path="/upload-avatar" exact>
                         <UploadAvatar
                             setBackdrop={setBackdrop}
                             backdrop={backdrop}
                         />
-                    </Route>
+                    </Route> */}
 
                     <Route>
                         <PageNotFound />

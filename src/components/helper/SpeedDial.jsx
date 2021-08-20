@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link, Redirect  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
-import FileCopyIcon from '@material-ui/icons/FileCopyOutlined';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import PersonIcon from '@material-ui/icons/Person';
 import ListIcon from '@material-ui/icons/List';
@@ -41,7 +40,7 @@ export default function SpeedDialTooltipOpen() {
   const classes = useStyles();
   const classesToolTip = useStylesTooltip();
   const [open, setOpen] = React.useState(false);
-  const [hidden, setHidden] = React.useState(false);
+  // const [hidden, setHidden] = React.useState(false);
 
   
 const actions = [
@@ -63,7 +62,7 @@ const actions = [
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         className={classes.speedDial}
-        hidden={hidden}
+        hidden={false}
         icon={<SpeedDialIcon />}
         onClose={handleClose}
         onOpen={handleOpen}

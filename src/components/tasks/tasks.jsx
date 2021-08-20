@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 let tasks = []  
+console.log(tasks)
 
 const Tasks = (props) => {
   const classes = useStyles();
@@ -47,8 +48,8 @@ const Tasks = (props) => {
   const [allTasks, setAllTasks] = React.useState([]);
   const [demo, setDemo] = React.useState(false)
   const [redirect, setRedirect] = React.useState(false);
-
-useEffect(() => {
+  
+useEffect( async () => {
   if(window.localStorage.getItem('token')){
       const getTasksByToken = async () => {
           props.setBackdrop(true)  
@@ -75,6 +76,8 @@ useEffect(() => {
         }
         getTasksByToken();
       }
+      setChecked(true)
+      setDemo(false)
     }, [demo])
 
     const tasks = allTasks.map((item, i) =>

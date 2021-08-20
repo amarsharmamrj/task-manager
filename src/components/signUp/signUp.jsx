@@ -117,7 +117,7 @@ const SignUp = (props) => {
     let email = document.getElementById('email').value.trim()
     let age = parseInt(document.getElementById('age').value)
     let password = document.getElementById('password').value.trim()
-    if(name === '' || email === '' || age == '' || password === ''){
+    if(name === '' || email === '' || age === '' || password === ''){
       console.log("not submit")
       props.setSnackbar({type: "error", text: "Kindly, fix the highlighted error!"})
       props.setSnackbarStatus(true)

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 import { Link, Redirect  } from 'react-router-dom'
 import clsx from 'clsx';
 import { makeStyles,useTheme } from '@material-ui/core/styles';
@@ -6,11 +6,11 @@ import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
+// import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import CssBaseline from '@material-ui/core/CssBaseline';
+// import InboxIcon from '@material-ui/icons/MoveToInbox';
+// import MailIcon from '@material-ui/icons/Mail';
+// import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -25,7 +25,7 @@ import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import NoteAddIcon from '@material-ui/icons/NoteAdd';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import PersonIcon from '@material-ui/icons/Person';
+// import PersonIcon from '@material-ui/icons/Person';
 import ListIcon from '@material-ui/icons/List';
 
 
@@ -144,6 +144,7 @@ export default function SwipeableTemporaryDrawer(props) {
       }
     }
 
+    console.log(userLogin)
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -239,8 +240,11 @@ export default function SwipeableTemporaryDrawer(props) {
             }); 
           }
           getUserData();
-          console.log("user data state", userData)
+          // console.log("user data state", userData)
         }
+
+        setOpen(false)
+        setDemo(false)
       }, [demo])
   
 

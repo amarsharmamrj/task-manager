@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Redirect  } from 'react-router-dom'
+// import { Redirect  } from 'react-router-dom'
 import {
   makeStyles,
 } from '@material-ui/core/styles';
@@ -9,11 +9,11 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import IconButton from '@material-ui/core/IconButton';
 import Grid from '@material-ui/core/Grid';
-import FolderIcon from '@material-ui/icons/Folder';
+// import FolderIcon from '@material-ui/icons/Folder';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import moment from 'moment';
@@ -58,7 +58,7 @@ export default function Task(props) {
   // const [redirect, setRedirect] = React.useState(false);
   const [dialog, setDialog] = React.useState(false);
   const [confirmDelete, setConfirmDelete] = React.useState(false);
-  const [edit, setEdit] = React.useState(false);
+  // const [edit, setEdit] = React.useState(false);
 
   const handleDelete = async () => {
     console.log("delete", props.id)
@@ -74,7 +74,7 @@ export default function Task(props) {
   useEffect(async ()=>{
     
     // edit == true ? <Redirect to="/" /> : ''
-    console.log("edit", edit)
+    // console.log("edit", edit)
   
     console.log("dialog", dialog)
     console.log("delete",confirmDelete)

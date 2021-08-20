@@ -79,9 +79,8 @@ export default function Task(props) {
     console.log("dialog", dialog)
     console.log("delete",confirmDelete)
 
-    const fetchData = async () => {
-      
-      if(confirmDelete == true){
+    async function fetchData(){
+      if(confirmDelete === true){
         props.setBackdrop(true)
         await axios.delete(`https://task-manger-api-new.herokuapp.com/tasks/${props.id}`,
           {

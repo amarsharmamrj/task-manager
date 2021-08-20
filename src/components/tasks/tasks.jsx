@@ -49,8 +49,10 @@ const Tasks = (props) => {
   const [demo, setDemo] = React.useState(false)
   const [redirect, setRedirect] = React.useState(false);
   
-useEffect( async () => {
-  if(window.localStorage.getItem('token')){
+useEffect( () => {
+
+  async function fetchData(){
+    if(window.localStorage.getItem('token')){
       const getTasksByToken = async () => {
           props.setBackdrop(true)  
           await axios.get('https://task-manger-api-new.herokuapp.com/tasks?sortBy=createdAt:desc',
@@ -62,11 +64,11 @@ useEffect( async () => {
           })
           .then(function (response) {
             console.log(response);
-            response.data.map((item) => {
+            response.data.forEach((item) => {
                  tasks.push(item);
             })
             setAllTasks(tasks);
-            console.log('state', allTasks)
+            // console.log('state', allTasks)
             props.setBackdrop(false)
           })
           .catch(function (error) {
@@ -78,7 +80,9 @@ useEffect( async () => {
       }
       setChecked(true)
       setDemo(false)
-    }, [demo])
+  }
+  fetchAllTasks();
+}, [demo])
 
     const tasks = allTasks.map((item, i) =>
     <Slide key={i} direction="right" in={checked} {...({ timeout: 500 + i*120 })}>

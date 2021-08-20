@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     email: {
       fontSize: '12px'
     },
-    white: {
+    marginWhite: {
       color: 'white !important' 
     },
     list: {
@@ -287,13 +287,13 @@ export default function SwipeableTemporaryDrawer(props) {
 
             {props.darkMode ? (
               <div>
-              <IconButton className={classes.margin} size="small" onClick={handleThemeChange} className={classes.white}> 
+              <IconButton className={classes.marginWhite} size="small" onClick={handleThemeChange}> 
                 <Brightness4Icon />
               </IconButton>
               </div>
           ) : (
            <div>
-            <IconButton className={classes.margin} size="small" onClick={handleThemeChange} className={classes.white}>
+            <IconButton className={classes.marginWhite} size="small" onClick={handleThemeChange}>
              <Brightness7Icon />
             </IconButton>
             </div>

@@ -71,7 +71,7 @@ export default function Task(props) {
     props.setRedirect(true)
   }
 
-  useEffect(async ()=>{
+  useEffect(()=>{
     
     // edit == true ? <Redirect to="/" /> : ''
     // console.log("edit", edit)

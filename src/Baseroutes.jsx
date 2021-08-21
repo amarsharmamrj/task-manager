@@ -28,12 +28,15 @@ const BaseRoutes = () => {
         checkedA: true
       });
 
-//    const themeType = localStorage.getItem("preferred-theme")
-//     const theme = createTheme ({                                                                                            
-//         palette: {
-//           type: themeType,
-//         }
-//       });
+   const themeType = localStorage.getItem("preferred-theme")
+    const theme = createTheme ({                                                                                            
+        palette: {
+            type: themeType,
+            primary: {
+                 main: '#3f51b5',
+            }
+        }
+      });
 
       const handleThemeChange = (event) => {
         setState({ [event.target.name]: event.target.checked });
@@ -67,8 +70,8 @@ const BaseRoutes = () => {
     
     return (
         <div>
-            {/* <ThemeProvider theme={theme}> */}
-            {/* <CssBaseline /> */}
+            <ThemeProvider theme={theme}>
+            <CssBaseline />
             <BrowserRouter  forceRefresh={false}>
                 <SwipeableTemporaryDrawer darkMode={darkMode} setDarkMode={setDarkMode} handleThemeChange={handleThemeChange} />
        
@@ -139,7 +142,7 @@ const BaseRoutes = () => {
                 </SwitchRouter> 
 
             </BrowserRouter>
-            {/* </ThemeProvider> */}
+            </ThemeProvider>
 
             <CustomizedSnackbars 
                 snackbarStatus={snackbarStatus}

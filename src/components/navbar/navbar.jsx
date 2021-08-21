@@ -104,11 +104,13 @@ const useStyles = makeStyles((theme) => ({
       width: "70px"
     },
     link : {
-      color: "#f10a5f",
+      color: "#5f77f9",
       paddingRight: "20px"
     },
     link2 : {
-      color: "#f10a5f",
+      color: "#5f77f9",
+      fontWeight: "600",
+      letterSpacing: "1px",
       paddingLeft: "20px",
       textDecoration: "none"
     }

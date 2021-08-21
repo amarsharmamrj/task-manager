@@ -106,6 +106,11 @@ const useStyles = makeStyles((theme) => ({
     link : {
       color: "#f10a5f",
       paddingRight: "20px"
+    },
+    link2 : {
+      color: "#f10a5f",
+      paddingLeft: "20px",
+      textDecoration: "none"
     }
   }));
 
@@ -198,15 +203,18 @@ export default function SwipeableTemporaryDrawer(props) {
       <Divider />
 
       <List>
+        <Link to="/create-task" className={classes.link2}>
           <ListItem button key="create-task">
-            <Link to="/create-task" className={classes.link}><NoteAddIcon /></Link>
-            <ListItemText primary="Create Task" />
+            <NoteAddIcon />
+            <ListItemText primary="Create Task" className={classes.link2} />
           </ListItem>
-          
+        </Link>
+        <Link to="/" className={classes.link2}>
           <ListItem button key="view-task">
-            <Link to="/" className={classes.link}><ListIcon /></Link>
-            <ListItemText primary="View Task" />
+            <ListIcon />
+            <ListItemText primary="View Task" className={classes.link2} />
           </ListItem>
+        </Link> 
       </List>
 
       <Divider />

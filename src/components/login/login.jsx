@@ -123,6 +123,7 @@ const Login =   (props) => {
             props.setSnackbar({type: "success", text: "Login successfull!"})
             props.setSnackbarStatus(true)
             setChecked(false)
+            // window.location.reload(true)
             setTimeout(function(){
               setRedirect(true)
             }, 2000);
@@ -144,7 +145,7 @@ const Login =   (props) => {
 
   return (
     <Slide direction="right" in={checked} {...({ timeout: 500 })}>
-    <form className={classes.root} noValidate  onSubmit={handleSubmit}>
+    <form className={classes.root} noValidate  onSubmit={handleSubmit} autocomplete="off">
       <Grid container spacing={0} justifyContent='center' alignContent='center'> 
           <Grid item xs={12} sm={6} md={6} container className={classes.card}>
         <Typography variant="h5" component="h2" className={classes.ml10} color="primary" display="block">

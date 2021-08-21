@@ -19,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: { 
       margin: theme.spacing(1),
-      width: '100%',
-      paddingLeft: "60px"
+      width: '100%'
     },
     ml10: {
         marginLeft: '10px'
@@ -135,7 +134,7 @@ const EditTask = (props) => {
 
     return (
     <Slide direction="right" in={checked} {...({ timeout: 500 })}>
-    <form className={classes.root} noValidate  onSubmit={handleSubmit}>
+    <form className={classes.root} noValidate  onSubmit={handleSubmit} autocomplete="off">
        <Grid container spacing={0} justifyContent='center'> 
           <Grid item xs={12} sm={6} md={6} container className={classes.card}>
         <Typography variant="h5" component="h2" className={classes.ml10} color="primary">
@@ -145,7 +144,6 @@ const EditTask = (props) => {
             <TextField
             id="task"
             name="task"
-            label="Task"
             type="text" 
             required
             variant="outlined"

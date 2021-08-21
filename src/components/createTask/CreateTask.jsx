@@ -153,9 +153,7 @@ const CreateTask = (props) => {
         {
           redirect ? <Redirect to="/" /> : ''
         }
-        {
-          !token ? <Redirect to="/login" /> : ''
-        }
+       
     </form>
     </Slide>
     )

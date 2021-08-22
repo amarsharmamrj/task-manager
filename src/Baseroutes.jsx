@@ -12,7 +12,7 @@ import SpeedDial from './components/helper/SpeedDial'
 import SwipeableTemporaryDrawer from './components/navbar/navbar'
 import CreateTask from './components/createTask/CreateTask'                                                                                                                                 
 import EditTask from './components/tasks/editTask'                                                                                                                                 
-import { ThemeProvider, createTheme  } from '@material-ui/core/styles';
+// import { ThemeProvider, createTheme  } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';    
 
 const BaseRoutes = () => {
@@ -28,15 +28,15 @@ const BaseRoutes = () => {
         checkedA: true
       });
 
-   const themeType = localStorage.getItem("preferred-theme")
-    const theme = createTheme ({                                                                                            
-        palette: {
-            type: themeType,
-            primary: {
-                 main: '#3f51b5',
-            }
-        }
-      });
+//    const themeType = localStorage.getItem("preferred-theme")
+//     const theme = createTheme ({                                                                                            
+//         palette: {
+//             type: themeType,
+//             primary: {
+//                  main: '#3f51b5',
+//             }
+//         }
+//       });
 
       const handleThemeChange = (event) => {
         setState({ [event.target.name]: event.target.checked });
@@ -70,8 +70,8 @@ const BaseRoutes = () => {
     
     return (
         <div>
-            <ThemeProvider theme={theme}>
-            <CssBaseline />
+            {/* <ThemeProvider theme={theme}>
+            <CssBaseline /> */}
             <BrowserRouter  forceRefresh={false}>
                 <SwipeableTemporaryDrawer darkMode={darkMode} setDarkMode={setDarkMode} handleThemeChange={handleThemeChange} />
        
@@ -142,7 +142,7 @@ const BaseRoutes = () => {
                 </SwitchRouter> 
 
             </BrowserRouter>
-            </ThemeProvider>
+            {/* </ThemeProvider> */}
 
             <CustomizedSnackbars 
                 snackbarStatus={snackbarStatus}

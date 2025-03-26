@@ -1,7 +1,7 @@
 import React from 'react'
 import BaseRoutes from './Baseroutes'
 
-const App = () => { 
+const App = () => {  
     return (
         <div>
             <BaseRoutes />

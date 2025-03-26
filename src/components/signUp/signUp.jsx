@@ -8,7 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import { Typography } from '@material-ui/core';  
-import axios from 'axios'; 
+import axios from 'axios';   
 import Slide from '@material-ui/core/Slide';
   
 const useStyles = makeStyles((theme) => ({

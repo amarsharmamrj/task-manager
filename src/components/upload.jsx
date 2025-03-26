@@ -6,7 +6,7 @@ export default function Upload() {
   const [superHero, setSuperHero] = React.useState();
   
   const submitForm = (event) => {
-    event.preventDefault();
+    event.preventDefault(); 
 
     const data = new FormData()
    data.append('file',uploadFile)
